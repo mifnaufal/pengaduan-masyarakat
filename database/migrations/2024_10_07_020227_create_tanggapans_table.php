@@ -19,6 +19,7 @@ return new class extends Migration
             $table->enum('level', ['0','pending', 'selesai']);
 
             $table->foreign('id_pengaduan')->refrences('id_pengaduan')->on('pengaduan');
+            $table->foreign('id_petugas')->refrences('id_petugas')->on('petugas');
         });
     }
 
