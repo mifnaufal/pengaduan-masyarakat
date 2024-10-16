@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('tanggapan');
             $table->unsignedBigInteger('id petugas');
             $table->enum('level', ['0','pending', 'selesai']);
+
+            $table->foreign('id_pengaduan')->refrences('id_pengaduan')->on('pengaduan');
         });
     }
 
