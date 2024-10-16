@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nama', 45);
             $table->string('email')->unique();
             $table->dateTime('email_verified_at')->nullable();
-            $table->string('Username', 25)->unique();
-            $table->string('Password')->nullable(); //
-            $table->string('Telp')->nullable();
+            $table->string('username', 25)->unique();
+            $table->string('password')->nullable(); //
+            $table->string('telp')->nullable();
 
             $table->string('provider_id')->nullable();
             $table->string('provider')->nullable();
