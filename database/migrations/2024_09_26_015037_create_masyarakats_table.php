@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('Username', 25)->unique();
             $table->string('Password')->nullable(); //
             $table->string('Telp')->nullable();
+
+            $table->string('provider_id')->nullable();
+            $table->string('provider')->nullable();
+            $table->timestamp();
         });
     }
 
