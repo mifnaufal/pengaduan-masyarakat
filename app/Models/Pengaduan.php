@@ -9,10 +9,10 @@ class Admin extends Model
 {
     use HasFactory;
 
-    protected $primarykey = 'nik';
+    protected $primarykey = 'pengaduan';
 
     protected $fillable = [
-        'nik', 'nama', 'email', 'email_verified_at', 'username', 'password', 'tepl', 'provider_id', 'provider',
+        'pengaduan', 'tanggal_pengaduan', 'nik', 'judul_laporan', 'isi_laporan', 'lokasi_kejadian', 'tanggal_kejadian', 'foto', 'kategori_kejadian', 'status'
     ];
 
 }

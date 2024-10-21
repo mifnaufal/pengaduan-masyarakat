@@ -3,9 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Fondation\Auth\User as Authentciable;
 
 class Petugas extends Model
 {
     use HasFactory;
+    
+    protected $primarykey = 'id_petugas';
+
+    protected $fillable = [
+        'id_petugas', 'nama_petugas', 'username', 'password', 'telp', 'status',
+    ];
 }

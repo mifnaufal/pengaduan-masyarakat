@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laporans', function (Blueprint $table) {
-            $table->unsignedBigInteger('id pengaduan');
-            $table->dateTime('tanggal tanggapan');
+            $table->unsignedBigInteger('id_pengaduan');
+            $table->dateTime('tanggal_tanggapan');
             $table->text('tanggapan');
-            $table->unsignedBigInteger('id petugas');
+            $table->unsignedBigInteger('id_petugas');
             $table->enum('level', ['0','pending', 'selesai']);
             $table->foreign('id_pengaduan')->refrences('id_pengaduan')->on('pengaduan');
             $table->foreign('id_petugas')->refrences('id_petugas')->on('petugas');

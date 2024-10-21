@@ -15,10 +15,10 @@ return new class extends Migration
         Schema::create('petugas', function (Blueprint $table) {
             $table->integer('id_petugas',16)->primary();
             $table->string('nama_petugas',45);
-            $table->string('username 25')->unique();
+            $table->string('username', 25)->unique();
             $table->string('password', 13);
             $table->string('telp');
-            $table->enum('level',['admin','petugas']);
+            $table->enum('status',['admin','petugas']);
             $table->timestamps(); 
         });
     }
