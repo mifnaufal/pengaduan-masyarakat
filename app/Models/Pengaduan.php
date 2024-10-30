@@ -12,7 +12,7 @@ class Admin extends Model
     protected $primarykey = 'pengaduan';
 
     protected $fillable = [
-        'pengaduan', 'tanggal_pengaduan', 'nik', 'judul_laporan', 'isi_laporan', 'lokasi_kejadian', 'tanggal_kejadian', 'foto', 'kategori_kejadian', 'status'
+        'tanggal_pengaduan', 'nik', 'judul_laporan', 'isi_laporan', 'lokasi_kejadian', 'tanggal_kejadian', 'foto', 'kategori_kejadian', 'status'
     ];
 
 }

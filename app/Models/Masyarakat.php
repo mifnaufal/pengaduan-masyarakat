@@ -12,6 +12,6 @@ class Masyarakat extends Authentciable
     protected $primarykey = 'nik';
 
     protected $fillable = [
-        'nik', 'nama', 'email', 'email_verified_at', 'username', 'password', 'tepl', 'provider_id', 'provider',
+        'nama', 'email', 'email_verified_at', 'username', 'password', 'tepl', 'provider_id', 'provider',
     ];
 }

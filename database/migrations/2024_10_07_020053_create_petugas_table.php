@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Monolog\Level;
 
 return new class extends Migration
 {
@@ -13,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('petugas', function (Blueprint $table) {
-            $table->integer('id_petugas',16)->primary();
-            $table->string('nama_petugas',45);
+            $table->id('id_petugas');
+            $table->string('nama_petugas', 35);
             $table->string('username', 25)->unique();
-            $table->string('password', 13);
-            $table->string('telp');
-            $table->enum('status',['admin','petugas']);
-            $table->timestamps(); 
+            $table->string('password');
+            $table->string('telp', 13);
+            $table->enum('level', ['admin', 'petugas']);
+
+            $table->timestamps();
         });
     }
 

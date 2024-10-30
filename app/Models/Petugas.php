@@ -12,6 +12,6 @@ class Petugas extends Model
     protected $primarykey = 'id_petugas';
 
     protected $fillable = [
-        'id_petugas', 'nama_petugas', 'username', 'password', 'telp', 'status',
+        'nama_petugas', 'username', 'password', 'telp', 'status',
     ];
 }
