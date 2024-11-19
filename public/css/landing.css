@@ -6,7 +6,7 @@
     width: 100%;
     height: 430px;
     background: #6a70fc;
-    overflow: hidden,6a70fc;
+    overflow: hidden, #6a70fc;
 }
 
 .header .wave{
@@ -39,18 +39,18 @@
 }
 
 .header .wave3{
-    -webkit-animation: animate 15s linear infinite;
+    -webkit-animation: animate 30s linear infinite;
     animation: animate 30s linear infinite;
     z-index: 997;
-    opacity: 0.5;
+    opacity: 0.2;
     -webkit-animation-delay: -2s;
     animation-delay: -2s;
     bottom: -15;
 }
 
 .header .wave4{
-    -webkit-animation: animate 30s linear infinite;
-    animation: animate 30s linear infinite;
+    -webkit-animation: animate 15s linear infinite;
+    animation: animate 15s linear infinite;
     z-index: 996;
     opacity: 0.7;
     -webkit-animation-delay: -5s;
@@ -59,6 +59,15 @@
 }
 
 @-webkit-keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate {
     0% {
         background-position-x: 0;
     }
@@ -76,23 +85,58 @@
     }
 }
 
-body {
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -1000px;
+    }
+}
+
+body{
     font-family: 'Poppins', sans-serif;
 }
 
 .italic {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 14px;    
 }
 
-.medium {
+.medium{
     font-weight: 500;
     font-size: 18px;
-}  
+}
 
-.semi-bold {
+.semi-bold{
     font-weight: 600;
-    font-size: 20px;
+    font-size: 26px;
+}
+
+.navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-purple{
+    border: 1px solid #6a70fc;
+    color: #6a70fc;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-weight: 500;
+}
+
+.navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-outline-purple{
+    color: red;
+    border: 1px solid #6a70fc;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-weight: 500;
+}
+
+.navbar .container-fluid #navbarNav .navbar-nav .nav-item .btn-outline-purple:hover{
+    background-color: #6a70fc;
+    color: #fff;
+    border: 1px solid #6a70fc;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-weight: 500;
 }
 
 .text-center h2{
@@ -100,5 +144,115 @@ body {
 }
 
 .text-center p{
+    font-size: 16px;
+}
+
+.row .col {
+    z-index: 1001;
+}
+
+
+@media (max-width: 570px) {
+    .row .col .content-top {
+        padding: 32px 20px 32px 20px;
+        background: white;
+        margin-top: 160px;
+        border-color: #6a70fc;
+    }
+}
+
+@media (max-width: 768px) {
+    .row .col .content-top {
+        padding: 32px 20px 32px 20px;
+        background: white;
+        margin-top: 160px;
+        border-color: #6a70fc;
+    }
+}
+
+@media (max-width: 992px) {
+    .row .col .content-top {
+        padding: 32px 20px 32px 20px;
+        background: white;
+        margin-top: 160px;
+        border-color: #6a70fc;
+    }
+}
+
+
+@media (max-width: 570px) {
+    .row .col .content-bottom {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .row .col .content-top {
+        margin-top: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+    .row .col .content-top {
+        margin-top: 32px;
+    }
+}
+
+.row .col .content {
+    padding: 32px 20px 32px 20px;
+    background: white;
+    border-color: #6a70fc;
+}
+
+@media screen and (max-width: 992px) {
+    .row .col .content-top {
+        padding: 32px 20px 32px 20px;
+        background: white;
+        margin-top: 160px;
+        border-color: #6a70fc;
+    }
+}
+
+.row .col .content .card{
+    background: #6a70fc;
+    padding: 16px;
+    color: #fff;    
+}
+
+.row .col .content .btn-custom{
+    background: #6a70fc;
+    width: 100%;
+    color: #fff;  
+}
+
+
+.pengaduan .bg-custom{
+    background: #6a70fc;
+    height: 20%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.modal .modal-dialog .modal-content .modal-body h3 {
+    font-weight: 500;
+    font-size: 22px;
+    
+}
+
+.modal .modal-dialog .modal-content .modal-body p {
+    font-weight: 300;
     font-size: 16px;
+    color: red;
+    
+}
+
+.modal .modal-dialog .modal-content .modal-body .btn-purple {
+    color: #fff;
+    border-radius: 50px;
+    background: #6a70fc;
+    width: 100%;
+    
 }

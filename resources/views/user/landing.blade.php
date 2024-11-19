@@ -23,7 +23,7 @@
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toogler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,7 +49,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="btn btn-outline-purple">Register</a>
+                                <a href="{{ route('ereporthub.formRegister') }}" class="btn btn-purple text-white">Register</a>
                             </li>
                         </ul>
                         @endif
@@ -76,11 +76,90 @@
     <div class="row justify-content-center">
         <div class="col-lg-6 col-10 col">
             <div class="content shadow">
+                @if ($errors->any())
+
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        {{ $error }}
+                    </div>
+                @endforeach
+                @endif
+
+                @if (Session::has('pengaduan'))
+                    <div class="alert alert-success">
+                        {{ Session::get('pengaduan') }}
+                    </div>
+                @endif
+
+                <div class="card mb-3">Create Your Report</div>
+                <form action="#" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="isi_laporan">Report</label>
+                        <textarea name="isi_laporan" placeholder="Write Your Report Here..." class="form-control" cols="30" rows="10">{{ old('isi_laporan') }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Submit</button>
+
+                    <div class="form-group">
+                        <label for="foto">Foto</label>
+                        <input type="file" name="foto" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-custom mt-2">Submit</button>
+                </form>
             </div>
         </div>
     </div>
+
+
+    {{-- Hitung Pengaduan --}}
+    <div class="pengaduan mt-3">
+        <div class="bg-custom">
+            <div class="text-center">
+                <h5 class="text-black">Total Report</h5>
+                <h2 class="medium text-black">10</h2>
+            </div>
+        </div>
+    </div>
+
+    {{-- Footer --}}
+    <div class="footer">
+        <hr>
+        <div class="text-center">
+            <h5 class="text-black">Rehub</h5>
+            <p class="text-black">E-Report Hub</p>
+        </div>
+    </div>
+
     {{-- Penutup Body --}}
 
+{{-- modal --}}
+<div class="modal fade" id="loginModal" tabindex="-1" aria-label="exampleModalLable" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 class="mt-3">Login</h3>
+                <p>Please login to your account</p>
+                <form action="#" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-purple text-white mt-3" style="width: 100%">Login</button>
+                </form>
+                @if (Session::has('pesan'))
+                    <div class="alert alert-danger mt-3">
+                        {{ Session::get('pesan') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
 
 
     @section('js')
