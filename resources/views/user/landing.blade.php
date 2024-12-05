@@ -30,12 +30,12 @@
                         @if (Auth::guard('masyarakat')->check())
                         <ul class="navbar-nav text-center ml-auto">
                             <li class="nav-item">
-                                <a href="#" class="nav-link ml-auto text-white">
+                                <a href="{{ route('ereporthub.report') }}" class="nav-link ml-auto text-white">
                                     Report
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link ml-auto text-white" style="text-decoration: underline">
+                                <a href="{{ route('ereporthub.logout') }}" class="nav-link ml-auto text-white" style="text-decoration: underline">
                                     {{ Auth::guard('masyarakat')->user()->nama }}
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                 @endif
 
                 <div class="card mb-3">Create Your Report</div>
-                <form action="#" method="POST">
+                <form action="{{ route('ereporthub.login') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="isi_laporan">Report</label>
@@ -139,7 +139,7 @@
             <div class="modal-body">
                 <h3 class="mt-3">Login</h3>
                 <p>Please login to your account</p>
-                <form action="#" method="POST">
+                <form action="{{route ('ereporthub.login')}}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="username">Username</label>
